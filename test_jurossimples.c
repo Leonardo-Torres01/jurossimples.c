@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "function_juros.c"
+#include "function_jurossimples.c"
 
 int main() {
     
