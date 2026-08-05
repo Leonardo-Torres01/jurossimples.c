@@ -14,6 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: compile
-      run: gcc teste_jurossimples.c -o teste_jurossimples
+      run: gcc test_jurossimples.c -o test_jurossimples
     - name: execute
-      run: ./teste_jurossimples 
+      run: ./teste_jurossimples J = 100 x 0,5 x 10
