@@ -1,20 +1,12 @@
-#include <stdio.h>
 #include "function_jurossimples.c"
+#include <stdio.h>
+#include <assert.h>
 
-int main() {
+int main(int argc, char const *argv[])
+{
+	assert(jurossimples(100, 0.5, 10) == 500 && jurossimples(100, 0.25, 12) == 300 && jurossimples(100, 0.75, 5) == 375);
+	printf("Teste concluido com sucesso");
     
-    float resultado = juros_simples(1000.0, 10.0, 2);
-    
-    if (resultado == 1200.0f) 
-    {
-        printf("Teste Juros Simples: PASSOU\n");
-    } 
-    else 
-    {
-        printf("Teste Juros Simples: FALHOU (Resultado esperado: 1200.00, Obtido: %.2f)\n", resultado);
-    }
-
-    printf("Criado por Leonardo Torres");
-    
-    return 0;
+    printf(/nFeito por Leonardo Torres)
+	return 0;
 }
