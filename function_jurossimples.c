@@ -1,7 +1,3 @@
-#include <stdio.h>
-
-float juros_simples(float capital, float taxa, int tempo) {
-   
-    float juros = capital * (taxa) * tempo;
-    return juros; 
+double jurossimples(double capital, double taxa, double tempo){
+	return capital*taxa*tempo;
 }
