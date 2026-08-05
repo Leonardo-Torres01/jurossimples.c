@@ -1,28 +1,29 @@
 #include <stdio.h>
-#include "function_juros.c"
+#include <stdlib.h>
+#include "function_jurossimples.c"
 
-int main() 
+int main(int argc, char const *argv[])
+{
+    FILE *arquivo = fopen("jurossimples.txt", "w");
+
+	if(argc != 4)
    {
-    float capital, taxa;
-    int tempo;
+        printf("digite a palavra "juros" seguida de 3 argumentos (ex: juros 200 0.5 6)");
+        printf("\nsendo 200 o capital, 0.5 a taxa, e 6 o tempo, esses valores podem ser quaisquer numeros");
 
-    printf("--- Calculadora de Juros Simples ---\n");
-    
-    printf("Digite o capital inicial (R$): ");
-    scanf("%f", &capital);
-    
-    printf("Digite a taxa de juros mensal (%%): ");
-    scanf("%f", &taxa);
-    
-    printf("Digite o tempo (meses): ");
-    scanf("%d", &tempo);
+        fprintf(arquivo, "digite a palavra "juros" seguido de 3 argumentos (ex: juros 200 0.5 6)");
+        fprintf(arquivo, "\nsendo 200 o capital, 0.5 a taxa, e 6 o tempo, esses valores podem ser qualquer numero");
+    }
+   else
+   {
+    	double capital = atof(argv[1]);
+    	double taxa = atof(argv[2]);
+    	double tempo = atof(argv[3]);
+		printf("resultado: %f\n", jurossimples(capital, taxa, tempo));
+        fprintf(arquivo, "resultado: %f\n", jurossimples(capital, taxa, tempo));
+		fprintf(arquivo,"\nFeito por Leonardo Torres");
+    }
 
-    float montante =juros_simples(capital, taxa, tempo);
-    
-    printf("\nO montante final apos %d meses sera: R$ %.2f\n", tempo, montante);
-
-    
-    printf("Criado por Leonardo Torres");
-    
+    fclose(arquivo);
     return 0;
 }
